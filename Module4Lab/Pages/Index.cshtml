@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Guthrie Theater";
+}
+
+<div class="container mt-5">
+    <h1 class="text-center">Guthrie Theater</h1>
+    <h5>Current Shows:</h5>
+    <ul class="list-group">
+        <!-- For loop to loop through the array of show names & display them -->
+        @for (int i = 0; i < Model.Shows.Length; i++) {
+            <li class="list-group-item">@(i + 1). @Model.Shows[i]</li>
+        }
+    </ul>
+
+    <p class="mb-0 mt-3">Out of @Model.Shows.Length shows, @Model.LongTitleCount 
+        have a title longer than 5 letters.</p>
+</div>
